@@ -1,15 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Zalando+Sans:ital,wght@0,200..900;1,200..900&display=swap');
 @import "tailwindcss";
 
+@theme {
+  --color-brand-lime: #BFE93F;
+  --color-brand-dark: #1A1A1A;
+  --color-brand-surface: #242424;
+  --color-brand-border: #333333;
+  --color-brand-white: #FEFFF9;
+  --color-brand-muted: #A3A3A3;
+  --font-sans: 'Zalando Sans', 'Nunito', 'Roboto', system-ui, sans-serif;
+  --font-display: 'Zalando Sans', 'Nunito', system-ui, sans-serif;
+  --font-mono: monospace;
+}
+
 :root {
-  --background: #090d16;
-  --foreground: #f8fafc;
+  --background: #1A1A1A;
+  --foreground: #FEFFF9;
+  --accent: #BFE93F;
+}
+
+* {
+  font-family: 'Zalando Sans', 'Nunito', 'Roboto', system-ui, sans-serif;
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: 'Zalando Sans', 'Nunito', 'Roboto', system-ui, sans-serif;
+  line-height: 1.6;
   min-height: 100vh;
   margin: 0;
   overflow-x: hidden;
+}
+
+/* Typography Hierarchy Utilities with Zalando Sans */
+h1, .h1 {
+  font-family: 'Zalando Sans', system-ui, sans-serif;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+}
+
+h2, .h2 {
+  font-family: 'Zalando Sans', system-ui, sans-serif;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+h3, .h3 {
+  font-family: 'Zalando Sans', system-ui, sans-serif;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+h4, .h4 {
+  font-family: 'Zalando Sans', system-ui, sans-serif;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+p {
+  font-family: 'Zalando Sans', system-ui, sans-serif;
+  line-height: 1.65;
+}
+
+button, input, textarea, select {
+  font-family: 'Zalando Sans', system-ui, sans-serif;
+}
+
+/* Smooth Focus States for UX/Accessibility */
+*:focus-visible {
+  outline: 2px solid #BFE93F;
+  outline-offset: 3px;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #1A1A1A;
+}
+::-webkit-scrollbar-thumb {
+  background: #333333;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #BFE93F;
 }
