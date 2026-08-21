@@ -4,10 +4,21 @@ import React, { useState, useEffect } from "react";
 
 export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   const toggleMenu = () => {
     setMenuOpen((prev) => !prev);
   };
+
+  // Scroll listener for translucent glassmorphism on scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   // Prevent background scroll when menu drawer is open
   useEffect(() => {
@@ -32,8 +43,18 @@ export function Header() {
 
   return (
     <>
-      {/* Blended Header Bar - Seamlessly matches Hero section background */}
-      <header className="w-full bg-[#BFE93F] text-[#1A1A1A] px-4 sm:px-8 md:px-12 py-5 flex items-center justify-between sticky top-0 z-50 transition-colors">
+      {/* Fixed Overlay Header Bar with 24px Frosted Glassmorphism Blur */}
+      <header
+        className={`fixed top-0 left-0 right-0 z-50 w-full px-4 sm:px-8 md:px-12 py-4 flex items-center justify-between transition-all duration-300 ${
+          scrolled
+            ? "bg-white/10 border-b border-black/5 shadow-sm"
+            : "bg-transparent border-b border-transparent"
+        }`}
+        style={{
+          backdropFilter: "blur(24px)",
+          WebkitBackdropFilter: "blur(24px)",
+        }}
+      >
         {/* Brand Logo in Zalando Sans */}
         <a
           href="#"
@@ -43,12 +64,16 @@ export function Header() {
           AD-DICTED
         </a>
 
-        {/* Right Actions: Pill Button + Animated Hamburger Menu Icon */}
+        {/* Right Actions: Glass Pill Button + Animated Hamburger Menu Icon */}
         <div className="flex items-center space-x-3 sm:space-x-6 z-50">
-          {/* Responsive Pill CTA Button */}
+          {/* Glassmorphism Responsive Pill CTA Button with 24px Blur */}
           <a
             href="#contact"
-            className="px-4 py-2 sm:px-6 sm:py-2 rounded-full border border-[#1A1A1A] text-[#1A1A1A] hover:bg-[#1A1A1A] hover:text-[#BFE93F] font-bold text-xs sm:text-sm tracking-wide transition-all duration-300 shadow-sm min-h-[38px] sm:min-h-[42px] flex items-center justify-center whitespace-nowrap"
+            className="px-4 py-2 sm:px-6 sm:py-2.5 rounded-full border border-[#1A1A1A]/40 text-[#1A1A1A] bg-white/20 hover:bg-[#1A1A1A] hover:text-[#BFE93F] font-bold text-xs sm:text-sm tracking-wide transition-all duration-300 shadow-sm min-h-[38px] sm:min-h-[42px] flex items-center justify-center whitespace-nowrap"
+            style={{
+              backdropFilter: "blur(24px)",
+              WebkitBackdropFilter: "blur(24px)",
+            }}
           >
             Get Started
           </a>

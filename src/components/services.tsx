@@ -36,13 +36,13 @@ const servicesList = [
 
 export function Services() {
   return (
-    <section id="services" className="w-full bg-[#1A1A1A] text-[#FEFFF9] py-20 px-6 sm:px-12 md:px-16 select-none">
-      <div className="max-w-7xl mx-auto flex flex-col space-y-12">
+    <section id="services" className="w-full bg-[#F8F8FA] text-[#080808] py-16 sm:py-24 px-4 sm:px-8 md:px-12 lg:px-16 select-none">
+      <div className="max-w-7xl mx-auto flex flex-col space-y-10 sm:space-y-12">
         {/* Header Row */}
-        <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-4 border-b border-[#333333] pb-8">
+        <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-4 border-b border-[#080808]/10 pb-6 sm:pb-8">
           <div>
             <span
-              className="text-xs uppercase font-medium tracking-widest text-[#BFE93F]"
+              className="text-xs uppercase font-medium tracking-widest text-[#080808]/70"
               style={{ fontFamily: "'Zalando Sans', system-ui, sans-serif" }}
             >
               Our Expertise, Your Growth
@@ -51,7 +51,7 @@ export function Services() {
 
           <div>
             <h2
-              className="text-4xl sm:text-6xl font-black text-[#FEFFF9] tracking-tight uppercase"
+              className="text-3xl sm:text-5xl lg:text-6xl font-black text-[#080808] tracking-tight uppercase"
               style={{ fontFamily: "'Zalando Sans', system-ui, sans-serif" }}
             >
               Our Advantages
@@ -59,34 +59,31 @@ export function Services() {
           </div>
         </div>
 
-        {/* 5-Card Grid in Brand Color Palette */}
+        {/* 5-Card Grid in White Theme */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {servicesList.map((service, index) => (
             <div
               key={index}
-              className="rounded-[36px] bg-[#242424] text-[#FEFFF9] border border-[#333333] hover:border-[#BFE93F]/50 p-8 sm:p-10 flex flex-col justify-between h-[450px] sm:h-[500px] relative overflow-hidden group hover:-translate-y-1.5 transition-all duration-300 shadow-xl"
+              className="rounded-[32px] sm:rounded-[36px] bg-[#FEFFF9] text-[#080808] border border-[#080808]/10 hover:border-[#080808]/30 p-6 sm:p-8 md:p-9 flex flex-col justify-between h-[380px] sm:h-[420px] lg:h-[440px] relative overflow-hidden group hover:-translate-y-1.5 transition-all duration-300 shadow-sm hover:shadow-xl"
             >
-              {/* Radial glow accent in top right */}
-              <div className="absolute top-0 right-0 w-36 h-36 bg-[#BFE93F]/10 blur-3xl rounded-full pointer-events-none" />
-
               {/* TOP SECTION */}
               <div className="flex items-start justify-between z-10">
                 {/* Top-Left Outlined Pill */}
                 <span
-                  className="px-4 py-1.5 rounded-full border border-[#FEFFF9]/30 text-xs font-semibold text-[#FEFFF9] tracking-wide group-hover:border-[#BFE93F] transition-colors"
+                  className="px-3.5 py-1 rounded-full border border-[#080808] text-xs font-semibold text-[#080808] tracking-wide"
                   style={{ fontFamily: "'Zalando Sans', system-ui, sans-serif" }}
                 >
                   {service.tag}
                 </span>
 
-                {/* Top-Right Large Diagonal Arrow in Volt Lime #BFE93F */}
-                <ArrowUpRight className="w-12 h-12 text-[#BFE93F] stroke-[2] group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                {/* Top-Right Large Diagonal Arrow */}
+                <ArrowUpRight className="w-10 h-10 text-[#5533FF] stroke-[2] group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
               </div>
 
-              {/* MAIN CONTENT SECTION - Medium size text */}
+              {/* MAIN CONTENT SECTION */}
               <div className="my-auto py-2 z-10">
                 <h3
-                  className="text-xl sm:text-3xl font-medium text-[#FEFFF9] leading-[1.15] tracking-tight group-hover:text-[#FEFFF9] transition-colors"
+                  className="text-lg sm:text-2xl lg:text-3xl font-medium text-[#080808] leading-[1.2] tracking-tight"
                   style={{ fontFamily: "'Zalando Sans', system-ui, sans-serif" }}
                 >
                   <span className="block">{service.titleLine1}</span>
@@ -94,26 +91,26 @@ export function Services() {
                 </h3>
               </div>
 
-              {/* BOTTOM SECTION - Number cut off at bottom edge by overflow-hidden */}
-              <div className="flex items-end justify-between relative pt-4 z-10">
+              {/* BOTTOM SECTION - Number cropped at bottom edge */}
+              <div className="flex items-end justify-between relative z-10 pt-2">
                 {/* Bottom-Left Number cropped at bottom edge */}
                 <span
-                  className="text-8xl sm:text-[11rem] font-normal text-[#FEFFF9] tracking-tighter leading-none -mb-8 sm:-mb-12 translate-y-6 sm:translate-y-8 select-none pointer-events-none opacity-90"
+                  className="text-7xl sm:text-8xl md:text-9xl font-normal text-[#080808] tracking-tighter leading-none -mb-6 sm:-mb-8 translate-y-4 sm:translate-y-6 select-none pointer-events-none"
                   style={{ fontFamily: "'Zalando Sans', system-ui, sans-serif" }}
                 >
                   {service.num}
                 </span>
 
-                {/* Bottom-Right CTA: 'more  →' */}
+                {/* Bottom-Right CTA: 'more →' */}
                 <a
                   href="#contact"
-                  className="flex items-center space-x-2 group/btn pb-2 z-10"
+                  className="flex items-center space-x-2 group/btn pb-1 z-10"
                   style={{ fontFamily: "'Zalando Sans', system-ui, sans-serif" }}
                 >
-                  <span className="px-5 py-1.5 rounded-full border border-[#FEFFF9]/30 text-xs font-semibold text-[#FEFFF9] group-hover/btn:bg-[#BFE93F] group-hover/btn:border-[#BFE93F] group-hover/btn:text-[#1A1A1A] transition-colors">
+                  <span className="px-4 py-1.5 rounded-full border border-[#080808] text-xs font-semibold text-[#080808] group-hover/btn:bg-[#080808] group-hover/btn:text-[#FEFFF9] transition-colors">
                     more
                   </span>
-                  <div className="w-8 h-8 rounded-full border border-[#FEFFF9]/30 flex items-center justify-center text-[#BFE93F] group-hover/btn:bg-[#BFE93F] group-hover/btn:border-[#BFE93F] group-hover/btn:text-[#1A1A1A] transition-colors">
+                  <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full border border-[#080808] flex items-center justify-center text-[#080808] group-hover/btn:bg-[#5533FF] group-hover/btn:border-[#5533FF] group-hover/btn:text-[#FEFFF9] transition-colors">
                     <ArrowRight className="w-3.5 h-3.5" />
                   </div>
                 </a>

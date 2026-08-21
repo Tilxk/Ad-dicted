@@ -16,28 +16,16 @@ export function Hero() {
   }, []);
 
   return (
-    <section className="w-full min-h-[calc(100vh-76px)] flex flex-col md:flex-row select-none relative overflow-hidden bg-[#1A1A1A]">
-      {/* 5-Second Timer Visual Indicator (Top Subtle Progress Bar) */}
-      {!isSplit && (
-        <div className="absolute top-0 left-0 right-0 z-30 h-1 bg-[#1A1A1A]/10">
-          <motion.div
-            className="h-full bg-[#1A1A1A]"
-            initial={{ width: "0%" }}
-            animate={{ width: "100%" }}
-            transition={{ duration: 5, ease: "linear" }}
-          />
-        </div>
-      )}
-
-      {/* LEFT COLUMN: Volt Lime #BFE93F background */}
+    <section className="w-full min-h-screen flex flex-col md:flex-row select-none relative overflow-hidden bg-[#1A1A1A]">
+      {/* LEFT COLUMN: Volt Lime #BFE93F background blending seamlessly to top */}
       <motion.div
-        className="bg-[#BFE93F] text-[#1A1A1A] flex flex-col justify-between p-6 sm:p-12 md:p-16 z-20 relative"
+        className="bg-[#BFE93F] text-[#1A1A1A] flex flex-col justify-between p-6 sm:p-12 md:p-16 pt-24 sm:pt-28 md:pt-32 z-20 relative"
         initial={{ width: "100%" }}
         animate={{ width: isSplit ? "50%" : "100%" }}
         transition={{ duration: 1.2, ease: [0.76, 0, 0.24, 1] }}
       >
         {/* Headline: "WE CREATE THE HYPE" */}
-        <div className="flex-1 flex flex-col justify-center my-auto py-12 md:py-20">
+        <div className="flex-1 flex flex-col justify-center my-auto py-8 md:py-16">
           <motion.div
             layout
             transition={{ duration: 1.2, ease: [0.76, 0, 0.24, 1] }}
@@ -71,7 +59,7 @@ export function Hero() {
 
       {/* RIGHT COLUMN: Image Text Placeholder Panel */}
       <motion.div
-        className="bg-[#FEFFF9] text-[#1A1A1A] flex flex-col justify-between z-10 border-l border-[#1A1A1A]/10 overflow-hidden"
+        className="bg-[#FEFFF9] text-[#1A1A1A] flex flex-col justify-between z-10 border-l border-[#1A1A1A]/10 overflow-hidden pt-24 sm:pt-28 md:pt-32"
         initial={{ width: "0%", opacity: 0 }}
         animate={{
           width: isSplit ? "50%" : "0%",
